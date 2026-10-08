@@ -2,6 +2,10 @@
 
 React + Vite port of the Creght site `p9gt7megibu6/p9gt7menz0wi`.
 
+Demo: http://merrylmr.top/abyssal-vite/
+
+Every push to `main` is built and deployed to GitHub Pages by `.github/workflows/deploy.yml`; pull requests are built only.
+
 ```bash
 npm install
 npm run dev
