@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #f2f8ff;
+  --color-muted: rgba(226, 236, 248, 0.6);
+  --color-accent: #7fe8ff;
+  --color-line: rgba(255, 255, 255, 0.2);
+  --color-deep: #01060d;
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-text: 'Montserrat', system-ui, sans-serif;
+}
+
+/* Hollow display type for the key word in a headline. */
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-stroke-color: var(--color-ink);
+  @media (min-width: 1024px) {
+    -webkit-text-stroke-width: 2px;
+  }
+}
+
+/* SplitText wraps revealed lines in .line; words slide up from under the mask. */
+.line {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes sink {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@utility animate-sink {
+  animation: sink 2s ease-in-out infinite;
+  transform-origin: top;
+}
